@@ -57,7 +57,9 @@ $statement->closeCursor();
         <p><a href="index.php">List Products</a></p>
 
         <H3>
-            <form action="update_category.php" method="post">
+            <form action="update_category1.php" method="post">
+                <label>OLD NAME</label>
+                <input type="text" name="cagetory_name">
                 <label> Category ID:</label>
                 <input type="text" name="category_id">
                 <label> Category Name:</label>
