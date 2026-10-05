@@ -52,5 +52,20 @@ switch($action) {
         unset($_SESSION['cart12']);
         include('cart_view.php');
         break;
+    case 'end_session':
+
+        $_SESSION = array();
+        $name =session_name();
+        $expire=strtotime('-1 yeaar');
+        $params=session_get_cookie_params();
+        $path = $params['path'];
+        $domain = $params['domain'];
+        $secure = $params['secure'];
+        $httponly = $params['httponly'];
+        setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
+
+          include('cart_view.php');
+        break;
+
 }
 ?>

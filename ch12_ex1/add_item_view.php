@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>My Guitar Shop</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
     <header>
         <h1>My Guitar Shop</h1>
@@ -16,7 +18,7 @@
 
             <label>Name:</label>
             <select name="productkey">
-            <?php foreach($products as $key => $product) :
+                <?php foreach($products as $key => $product) :
                 $cost = number_format($product['cost'], 2);
                 $name = $product['name'];
                 $item = $name . ' ($' . $cost . ')';
@@ -24,23 +26,25 @@
                 <option value="<?php echo $key; ?>">
                     <?php echo $item; ?>
                 </option>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </select><br>
 
             <label>Quantity:</label>
             <select name="itemqty">
-            <?php for($i = 1; $i <= 10; $i++) : ?>
+                <?php for($i = 1; $i <= 10; $i++) : ?>
                 <option value="<?php echo $i; ?>">
                     <?php echo $i; ?>
                 </option>
-            <?php endfor; ?>
+                <?php endfor; ?>
             </select><br>
 
             <label>&nbsp;</label>
-            <input type="submit" value="Add Item"/>
+            <input type="submit" value="Add Item" />
         </form>
         <p><a href=".?action=show_cart">View Cart</a></p>
+        <p> session_id: <?php echo session_id() ?> /p>
 
     </main>
 </body>
+
 </html>
